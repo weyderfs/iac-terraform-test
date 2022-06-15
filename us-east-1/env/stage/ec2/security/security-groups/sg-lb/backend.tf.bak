@@ -8,7 +8,7 @@ terraform {
     }
   }
     backend "s3" {
-      bucket      = "iac-states"
+      bucket      = "iac-terraform-states"
       region      = "us-east-1"
       profile     = "default"
       encrypt     = true

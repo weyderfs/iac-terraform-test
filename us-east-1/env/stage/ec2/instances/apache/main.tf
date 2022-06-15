@@ -7,7 +7,7 @@ locals {
   name                    = "ec2-apache-stage"
   owner                   = "sre-team"
   subnet_id               = ""
-  vpc_security_group_ids  = 
+  vpc_security_group_ids  = ""
 
 }
 
