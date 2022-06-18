@@ -6,16 +6,17 @@ terraform {
       region  = "us-east-1"
       profile = "default"
     }
+  }
     # backend "s3" {
-    #   bucket      = "iac-states"
+    #   bucket      = "iac-terraform-states"
     #   region      = "us-east-1"
     #   profile     = "default"
     #   encrypt     = true
     #   kms_key_id  = "aws/s3"
-    #   key         = "aws/us-east-1/env/stage/ec2/load-balancing/alb/alb-webserver/terraform.tfstate"
+    #   key         = "aws/us-east-1/env/prd/ec2/security/security-groups/sg-alb-prd/terraform.tfstate"
     # }
-  }
 }
+
 provider "aws" {
   region = "us-east-1"
 }

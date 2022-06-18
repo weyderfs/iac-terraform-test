@@ -1,11 +1,11 @@
 locals {
-  name                  = "sg-webservers-prd"
-  sg_description        = "SG usado pelas EC2 de Webserver"
+  name                  = "sg-alb-prd"
+  sg_description        = "SG usado pelo ALB"
   environment           = "prd"
   vpc_id                = "vpc-080808" #fake
   ingress_description   = "Allow SSH"
-  ingres_from_port      = 22
-  ingres_to_port        = 22
+  ingres_from_port      = 443
+  ingres_to_port        = 443
   ingres_protocol       = "tcp"
   ingres_cidr_blocks    = ["0.0.0.0/0"]
   egress_from_port      = 0
