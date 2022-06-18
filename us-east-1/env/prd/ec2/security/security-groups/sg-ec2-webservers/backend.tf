@@ -13,7 +13,7 @@ terraform {
     #   profile     = "default"
     #   encrypt     = true
     #   kms_key_id  = "aws/s3"
-    #   key         = "aws/us-east-1/env/prd/ec2/security/security-groups/sg-webservers-prd/terraform.tfstate"
+    #   key         = "aws/us-east-1/env/prd/ec2/security/security-groups/sg-ec2-webservers-prd/terraform.tfstate"
     # }
 }
 

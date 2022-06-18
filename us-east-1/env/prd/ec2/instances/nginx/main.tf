@@ -7,12 +7,12 @@ locals {
   name                    = "ec2-nginx-prd"
   owner                   = "sre-team"
   subnet_id               = ""
-  vpc_security_group_ids  = ""
+  vpc_security_group_ids  = ["vpc-080808"]
 
 }
 
 module "ec2" {
-  source = "git::git@github.com:terraform-aws-modules/terraform-aws-ec2-instance.git?ref=v3.0.0"
+  source = "git::git@github.com:terraform-aws-modules/terraform-aws-ec2-instance.git?ref=v3.3.0"
 
   name                    = local.name
   ami                     = local.ami
