@@ -1,14 +1,14 @@
 locals {
-  ami                     = "ami-00bf5f1c358708486" #AMZ Linux 2
+  ami                     = "ami-0cff7528ff583bf9a" #AMZ Linux 2
   environment             = "prd"
   instance_type           = "t2.micro"
-  key_name                = "sre_key"
+  key_name                = "darth-test"
   monitoring              = false
   name                    = "ec2-nginx"
   owner                   = "sre-team"
-  subnet_id               = ""
-  user_data               = "use_data.sh"
-  vpc_security_group_ids  = [""]
+  subnet_id               = "subnet-6ff4d037"
+  user_data               = file("user_data.sh")
+  vpc_security_group_ids  = ["sg-0eba4382ee00072c1"] #tf-sg-webservers-prd
 
 }
 
@@ -27,7 +27,7 @@ module "ec2" {
   tags = {
     Name        = "${local.name}-${local.environment}"
     Environment = local.environment
-    Manageby    = "Terraform"
+    Managedby    = "Terraform"
     Owner       = local.owner
     Terraform   = true
   }

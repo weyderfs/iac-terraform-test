@@ -1,8 +1,8 @@
 locals {
-  name                  = "sg-alb-prd"
+  name                  = "tf-sg-alb-prd"
   sg_description        = "SG usado pelo ALB"
   environment           = "prd"
-  vpc_id                = "vpc-080808" #fake
+  vpc_id                = "vpc-b156efd6" #fake
   ingress_description   = "Allow SSH"
   ingres_from_port      = 443
   ingres_to_port        = 443
@@ -13,7 +13,6 @@ locals {
   egress_protocol       = "-1"
   egress_cidr_blocks    = ["0.0.0.0/0"]
   owner                 = "sreteam"
-
 }
 
 resource "aws_security_group" "sg" {

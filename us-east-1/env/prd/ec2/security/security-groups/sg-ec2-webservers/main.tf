@@ -1,8 +1,8 @@
 locals {
-  name                  = "sg-webservers-prd"
+  name                  = "tf-sg-webservers"
   sg_description        = "SG usado pelas EC2 de Webserver"
   environment           = "prd"
-  vpc_id                = "vpc-080808" #fake
+  vpc_id                = "vpc-b156efd6" #fake
   ingress_description   = "Allow SSH"
   ingres_from_port      = 22
   ingres_to_port        = 22
@@ -17,7 +17,7 @@ locals {
 }
 
 resource "aws_security_group" "sg" {
-  name        = local.name
+  name        = "${local.name}-${local.environment}"
   description = local.sg_description
   vpc_id      = local.vpc_id
 
@@ -37,7 +37,7 @@ resource "aws_security_group" "sg" {
   }
 
   tags = {
-    Name        = local.name
+    Name        = "${local.name}-${local.environment}"
     Environment = local.environment
     Manageby    = "Terraform"
     Owner       = local.owner
